@@ -5,13 +5,13 @@ public class Task {
     private int id;
     private String name;
     private String description;
-    private String list;
+    private int listId;
 
-    public Task(int id, String name, String description, String list) {
+    public Task(int id, String name, String description, int list) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.list = list;
+        this.listId = list;
     }
 
     public Task(){}
@@ -20,8 +20,8 @@ public class Task {
         return description;
     }
 
-    public String getList() {
-        return list;
+    public int getListId() {
+        return listId;
     }
     
     public Task(int id) {
