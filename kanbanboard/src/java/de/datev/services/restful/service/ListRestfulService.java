@@ -12,7 +12,7 @@ import de.datev.model.Task;
 /**
  * REST-Service für Kanban-Board
  */
-@Path("lists/")
+@Path("/lists")
 public class ListRestfulService {
 
     /**

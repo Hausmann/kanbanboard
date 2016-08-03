@@ -1,7 +1,10 @@
 package de.datev.model;
 
 public class Task {
+    
     private int id;
+    private String name;
+    private String description;
 
     public Task(int id) {
         this.id = id;
@@ -18,8 +21,7 @@ public class Task {
     public String getBeschreibung() {
         return description;
     }
-    private String name;
-    private String description;
+
 
     //TODO Task-Liste einfügen
     
