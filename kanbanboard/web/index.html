@@ -1,16 +1,73 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>New Project Template for Kanban-Board</title>
+<html><head>
+        <title>Kanban - Board</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <link href="./css/bootstrap.min.css" rel="stylesheet">        
+        <link href="./css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="./css/starter-template.css" rel="stylesheet">
     </head>
     <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">Kanban Board</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="starter-template">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-offset-1 col-lg-2 col-md-offset-1 col-md-3 ">
+                        <div class="row"> 
+                            <h4>Backlog</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 jumbotron">
+                                <p>Geld abheben</p>
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class="col-lg-offset-1 col-lg-2 col-md-offset-1 col-md-3 ">                     
+                        <div class="row"> 
+                            <h4>ToDos</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 jumbotron">
+                                <p>Test</p>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-lg-offset-1 col-lg-2 col-md-offset-1 col-md-3 ">                     
+                        <div class="row"> 
+                            <h4>Active</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 jumbotron">
+                                <p>Katze kaufen</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('&lt;script src="./js/jquery.min.js"&gt;&lt;\/script&gt;')</script>
+        <script src="./js/bootstrap.min.js"></script>
+    
+
+</body></html>
