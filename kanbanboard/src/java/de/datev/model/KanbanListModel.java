@@ -1,11 +1,25 @@
 package de.datev.model;
 
 public class KanbanListModel {
-    public int id;
-    public String name;
-    public String beschreibung;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+    private String name;
+    private String beschreibung;
 
     //TODO Task-Liste einfügen
+    
+    public KanbanListModel(){}
     
     public KanbanListModel(int id, String name, String beschreibung)
     {
