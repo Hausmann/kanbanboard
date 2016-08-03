@@ -3,6 +3,10 @@ package de.datev.model;
 public class KanbanListModel {
     private int id;
 
+    public KanbanListModel(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -20,6 +24,7 @@ public class KanbanListModel {
     //TODO Task-Liste einfügen
     
     public KanbanListModel(){}
+    
     
     public KanbanListModel(int id, String name, String beschreibung)
     {
