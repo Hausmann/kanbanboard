@@ -12,7 +12,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import de.datev.model.KanbanListModel;
+import de.datev.model.Task;
 
 /**
  * REST-Service für Kanban-Board
@@ -44,7 +44,7 @@ public class ListRestfulService {
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Response getList(@PathParam("id") int ListId) {
-        KanbanListModel result = new KanbanListModel(0, "dummy List", "dummy List");
+        Task result = new Task(0, "dummy List", "dummy List");
         //return Response.status(Response.Status.OK).entity(result).build();
         return Response.status(Response.Status.OK).build();
     }
