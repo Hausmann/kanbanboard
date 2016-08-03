@@ -5,7 +5,25 @@ public class Task {
     private int id;
     private String name;
     private String description;
+    private String list;
 
+    public Task(int id, String name, String description, String list) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.list = list;
+    }
+
+    public Task(){}
+    
+    public String getDescription() {
+        return description;
+    }
+
+    public String getList() {
+        return list;
+    }
+    
     public Task(int id) {
         this.id = id;
     }
@@ -17,21 +35,8 @@ public class Task {
     public String getName() {
         return name;
     }
-
-    public String getBeschreibung() {
-        return description;
-    }
-
-
+    
     //TODO Task-Liste einfügen
     
-    public Task(){}
     
-    
-    public Task(int id, String name, String beschreibung)
-    {
-        this.id = id;
-        this.name = name;
-        this.description = beschreibung;
-    }
 }

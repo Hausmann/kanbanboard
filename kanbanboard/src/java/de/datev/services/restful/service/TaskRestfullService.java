@@ -12,17 +12,13 @@ import de.datev.model.Task;
 /**
  * REST-Service für Kanban-Board
  */
-@Path("/lists")
-public class ListRestfulService {
+@Path("/tasks")
+public class TaskRestfullService {
 
-    /**
-     * gibt alle Listen zurück
-     *
-     * @return alle Einkaufslisten
-     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getList() {
+        
         return Response.status(Response.Status.OK).build();
 
         //return Response.status(Response.Status.OK).entity(result).build();
@@ -39,7 +35,7 @@ public class ListRestfulService {
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Response getList(@PathParam("id") int ListId) {
-        Task result = new Task(0, "dummy List", "dummy List");
+        Task result = new Task();
         //return Response.status(Response.Status.OK).entity(result).build();
         return Response.status(Response.Status.OK).build();
     }
