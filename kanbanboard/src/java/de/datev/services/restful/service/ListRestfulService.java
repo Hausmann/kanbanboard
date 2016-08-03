@@ -46,7 +46,7 @@ public class ListRestfulService {
     public Response getList(@PathParam("id") int ListId) {
         KanbanListModel result = new KanbanListModel(0, "dummy List", "dummy List");
         //return Response.status(Response.Status.OK).entity(result).build();
-        return Response.status(Response.Status.OK).build();
+        return Response.status(Response.Status.OK).entity(result).build();
     }
 
 }

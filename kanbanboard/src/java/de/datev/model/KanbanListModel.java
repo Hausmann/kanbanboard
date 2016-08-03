@@ -13,4 +13,11 @@ public class KanbanListModel {
         this.name = name;
         this.beschreibung = beschreibung;
     }
+    
+    public KanbanListModel()
+    {
+        this.id = 0;
+        this.name = "Default-Name";
+        this.beschreibung = "Default-Beschreibung";
+    }
 }
