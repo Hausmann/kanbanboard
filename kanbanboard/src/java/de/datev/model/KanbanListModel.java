@@ -60,4 +60,8 @@ public class KanbanListModel {
     {
         return tasks.get(id);
     }
+    
+    public void AddNewTask(String assignedTo, String description) {
+        this.tasks.add(new TaskItemModel(assignedTo, description));
+    }
 }

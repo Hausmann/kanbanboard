@@ -22,7 +22,7 @@ import de.datev.model.KanbanListModel;
 @Path("lists/")
 public class ListRestfulService {
 
-    private static KanbanBoardModel kanbanboard = new KanbanBoardModel();
+    public static KanbanBoardModel kanbanboard = new KanbanBoardModel();
     /**
      * gibt alle Listen zurück
      *
@@ -49,12 +49,11 @@ public class ListRestfulService {
      */
     //Beispielabfrage: /kanbanboard/lists/0
     @GET
-    @Path("{id}")
+    @Path("{listID}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Response getList(@PathParam("id") int ListId) {
+    public Response getList(@PathParam("listID") int ListId) {
         KanbanListModel result = kanbanboard.GetListByID(ListId);
         
         return Response.status(Response.Status.OK).entity(result).build();
     }
-
 }
