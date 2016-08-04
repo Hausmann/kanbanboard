@@ -31,7 +31,7 @@ public class ListRestfulService {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getLists() {
-        return Response.status(Response.Status.OK).entity(kanbanboard.getLists()).build(); 
+        return Response.status(Response.Status.OK).entity(kanbanboard.GetListByID(0)).build(); 
     }
 
     @POST
