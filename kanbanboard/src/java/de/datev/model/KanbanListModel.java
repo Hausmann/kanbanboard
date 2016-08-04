@@ -61,4 +61,11 @@ public class KanbanListModel {
     public void AddNewTask(String assignedTo, String description) {
         this.tasks.add(new TaskItemModel(assignedTo, description));
     }
+    
+    public KanbanListTasks GetArrayListOfTasks()
+    {
+        KanbanListTasks tasksOfList = new KanbanListTasks();
+        tasksOfList.setTasks(this.tasks);
+        return tasksOfList;
+    }
 }

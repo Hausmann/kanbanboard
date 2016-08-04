@@ -67,4 +67,11 @@ public class KanbanBoardModel {
         KanbanListModel newList = new KanbanListModel(name);
         this.lists.add(newList);
     }
+    
+    public KanbanListList GetArrayListOfTaskLists()
+    {
+        KanbanListList ListOfTaskLists = new KanbanListList();
+        ListOfTaskLists.setLists(this.lists);
+        return ListOfTaskLists;
+    }
 }
