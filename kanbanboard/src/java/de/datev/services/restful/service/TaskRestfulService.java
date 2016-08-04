@@ -35,7 +35,7 @@ public class TaskRestfulService {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getLists(@PathParam("listID") int listID ) {
-        return Response.status(Response.Status.OK).entity(kanbanboard.GetListByID(listID).getTasks()).build(); 
+        return Response.status(Response.Status.OK).entity(kanbanboard.GetListByID(listID).GetArrayListOfTasks()).build(); 
     }
     
     @POST
@@ -44,7 +44,7 @@ public class TaskRestfulService {
     public Response createNewList(@PathParam("listID") int listID, TaskItemEmpty emptyTask){
         kanbanboard.GetListByID(listID).AddNewTask(emptyTask.getAssignedTo(), emptyTask.getDescription());
         
-        return Response.status(Response.Status.OK).entity(kanbanboard.GetListByID(listID).getTasks()).build();
+        return Response.status(Response.Status.OK).entity(kanbanboard.GetListByID(listID).GetArrayListOfTasks()).build();
     }
     
     
