@@ -20,11 +20,12 @@
                     <a href="#" class="navbar-brand">Kanban Board</a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                    <div class="nav navbar-nav input-group nav-tabs-justified nav-justified">
+                        <input name="newListBox" type="text" class="form-control" placeholder="Name">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" onclick="addList(document.getElementsByName('newListBox')[0].value)" type="button">Add</button>
+                        </span>
+                    </div>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
@@ -45,7 +46,7 @@
                             <div class="col-md-12 jumbotron"></div>
                         </div>                       
                     </div><!-- END For creating new lists -->
-                    
+
                 </div>
             </div>
         </div>
