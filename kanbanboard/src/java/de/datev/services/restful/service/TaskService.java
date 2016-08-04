@@ -27,7 +27,7 @@ public class TaskService {
     @Path("/test")
     @Produces({MediaType.APPLICATION_JSON})
     public Response test() {
-        Task t = new Task(1, "test", "test", 5);
+        Task t = new Task();
         return Response.status(Response.Status.OK).entity(t).build();
         //return t;
     }
