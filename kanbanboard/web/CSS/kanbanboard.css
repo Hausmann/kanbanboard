@@ -33,7 +33,3 @@ body {
     right:2%;
     -webkit-mask-image:-webkit-linear-gradient(top, rgba(5, 5, 5,1), rgba(5, 5, 5,1));
 }
-
-.addItem {
-    cursor: pointer;
-}
