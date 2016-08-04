@@ -5,37 +5,49 @@ function init() {
     
 }
 
-function testFunc(){
-    
+function testFunc(){    
     function showLists(lists){
         for(var index in lists){
-            alert(lists[index].listName);
-             var htmlStr = (buildListHeader(lists[index].listName));
+            //alert(lists[index].listName);
+            var htmlStr = (buildListHeader(lists[index].listName));           
             
-            htmlStr += createHtmlTasks(lists[index].listId);
-            
-            // add tasks
             htmlStr += buildListEnd(lists[index].listId);
             
             $("#kanbanlists").append(htmlStr);
-        }
-    }
-    
+            
+            loadTasks(lists[index].listId);
+        }        
+    }    
     
     $.get(rhost + "/lists", function (data) {
        showLists(data); 
     });
+    
+    
 }
 
- function loadTasks(listId){
+function loadTasks(listId) {
+//
+//    $.ajax({
+//        async: false,
+//        type: 'GET',
+//        url: rhost + "/lists/" + listId,
+//        success: function (data) {
+//            htmlStr += createHtmlTasks(data);
+//            return html;
+//        }
+//    });
      
      $.get(rhost + "/lists/" + listId, function(data){
-        return createHtmlTasks(data); 
+            var htmlStr = createHtmlTasks(data);
+            $(listId).append(htmlStr);           
+            
      });
  }
  
  function createHtmlTasks(tasks){
      var html = "";
+     
      for(var index in tasks){
          html+= buildTask(tasks[index]);
      }

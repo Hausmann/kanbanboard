@@ -15,30 +15,30 @@ import javax.ws.rs.PathParam;
 
 @Path("/lists")
 public class ListService {
+//
+//    @GET
+//    @Path("/test")
+//    @Produces({MediaType.APPLICATION_JSON})
+//    public TaskListEmpty test() {
+//        return new TaskListEmpty("testList");
+//    }
 
     @GET
-    @Path("/test")
+    @Path("/{listId}")
     @Produces({MediaType.APPLICATION_JSON})
-    public TaskListEmpty test() {
-        return new TaskListEmpty("testList");
+    public ArrayList<Task> getTasksByListId(@PathParam("listId") int listId){
+        ArrayList<Task> tasks = Repository.getTasks();
+        
+        ArrayList<Task> taksFromThisList = new ArrayList();
+        
+        for(Task task:tasks){
+            if(task.getListId()==listId){
+                taksFromThisList.add(task);
+            }
+        }
+        
+        return taksFromThisList;        
     }
-
-//    @GET
-//    @Path("/{listId}")
-//    @Produces({MediaType.APPLICATION_JSON})
-//    public ArrayList<Task> getTasksByListId(@PathParam("listId") int listId){
-//        ArrayList<Task> tasks = Repository.getTasks();
-//        
-//        ArrayList<Task> taksFromThisList = new ArrayList();
-//        
-//        for(Task task:tasks){
-//            if(task.getListId()==listId){
-//                taksFromThisList.add(task);
-//            }
-//        }
-//        
-//        return taksFromThisList;        
-//    }
     
     
     @GET

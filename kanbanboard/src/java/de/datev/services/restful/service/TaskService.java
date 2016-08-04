@@ -29,7 +29,7 @@ public class TaskService {
         return Repository.getTasks();
     }
     
-    @GET
+   
     
     
     @POST
