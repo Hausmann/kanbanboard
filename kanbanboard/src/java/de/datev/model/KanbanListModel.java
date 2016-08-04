@@ -43,9 +43,6 @@ public class KanbanListModel {
         this.currentNumber++;
         this.name = "Default-Name";
         this.tasks = new ArrayList<TaskItemModel>();
-        this.tasks.add(new TaskItemModel("TEST", "Michael"));
-        this.tasks.add(new TaskItemModel("TEST2", "Timon"));
-        this.tasks.add(new TaskItemModel("TEST3", "Julian"));
     }
     
     public KanbanListModel(String name)
