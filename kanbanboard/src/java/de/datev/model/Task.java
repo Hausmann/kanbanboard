@@ -3,6 +3,38 @@ package de.datev.model;
 public class Task {
 
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getListId() {
+        return listId;
+    }
+
+    public void setListId(int listId) {
+        this.listId = listId;
+    }
     private String name;
     private String description;
     private int listId;
@@ -21,25 +53,7 @@ public class Task {
         this.listId = 5;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public int getListId() {
-        return listId;
-    }
-
-    public Task(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
+    
 
     //TODO Task-Liste einfügen
 }

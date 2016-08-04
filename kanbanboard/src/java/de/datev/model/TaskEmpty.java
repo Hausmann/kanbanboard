@@ -9,11 +9,13 @@ package de.datev.model;
  *
  * @author TG00029
  */
-public class TaskList {
+public class TaskEmpty {
     
     private int listId;
-
-    private String listName;
+    
+    private String name;
+    
+    private String description;
 
     public int getListId() {
         return listId;
@@ -23,21 +25,20 @@ public class TaskList {
         this.listId = listId;
     }
 
-    public String getListName() {
-        return listName;
+    public String getName() {
+        return name;
     }
 
-    public void setListName(String listName) {
-        this.listName = listName;
+    public void setName(String name) {
+        this.name = name;
     }
-    
- 
-    
-    public TaskList(){}
-    
-    public TaskList(int listId, String listName) {
-        this.listId = listId;
-        this.listName = listName;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
     

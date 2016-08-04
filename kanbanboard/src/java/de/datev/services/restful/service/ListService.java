@@ -9,7 +9,6 @@ import de.datev.model.TaskList;
 import de.datev.model.TaskListEmpty;
 import java.util.ArrayList;
 import javax.ws.rs.Consumes;
-import static javax.ws.rs.HttpMethod.POST;
 import javax.ws.rs.POST;
 
 /**
@@ -25,26 +24,26 @@ public class ListService {
         return new TaskListEmpty("testList");
     }
 
-    
-    
-    
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public ArrayList<TaskList> getAllLists(){
+    public ArrayList<TaskList> getAllLists() {
         return Repository.getTaskLists();
     }
-    
+
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public TaskList addNewList(TaskListEmpty taskListEmpty){
+    public TaskList addNewList(TaskListEmpty taskListEmpty) {
         ArrayList<TaskList> repoList = Repository.getTaskLists();
-        int lastId = repoList.get(repoList.size()-1).getListId();
-        
-        TaskList newList = new TaskList(lastId+1,taskListEmpty.getName());
+        int lastId = 0;
+        if (repoList.size() > 0) {
+            lastId = repoList.get(repoList.size() - 1).getListId();
+        }
+
+        TaskList newList = new TaskList(lastId + 1, taskListEmpty.getName());
         Repository.getTaskLists().add(newList);
-                      
-        return newList;        
+
+        return newList;
     }
 //    
 //    
