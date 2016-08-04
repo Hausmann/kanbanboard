@@ -31,7 +31,7 @@ public class ListRestfulService {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response getLists() {
-        return Response.status(Response.Status.OK).entity(kanbanboard.getLists()).build(); 
+        return Response.status(Response.Status.OK).entity(kanbanboard.GetArrayListOfTaskLists()).build(); 
     }
 
     @POST
@@ -40,7 +40,7 @@ public class ListRestfulService {
     public Response createNewList(String name){
         kanbanboard.AddNewList(name);
         
-        return Response.status(Response.Status.OK).entity(kanbanboard.getLists()).build();
+        return Response.status(Response.Status.OK).entity(kanbanboard.GetArrayListOfTaskLists()).build();
     }
     /**
      * Selektiert eine Liste
