@@ -25,7 +25,7 @@ function gotKanbanListItem(data){
 
 
     
-function AddItem()
+function AddItemDialog()
 {
     // Get the modal
     var modal = document.getElementById('myModal');
@@ -56,7 +56,7 @@ function AddItem()
     //var sName = prompt("Bitte Beschreibung eingeben:");
 }
 
-function AddList(){
+function AddListDialog(){
     // Get the modal
     var modal = document.getElementById('myModal');
 
