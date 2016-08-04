@@ -1,5 +1,6 @@
 package de.datev.services.restful.service;
 
+import de.datev.model.KanbanBoardModel;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
@@ -44,8 +45,9 @@ public class ListRestfulService {
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Response getList(@PathParam("id") int ListId) {
-        KanbanListModel result = new KanbanListModel(0, "dummy List", "dummy List");
-        //return Response.status(Response.Status.OK).entity(result).build();
+        KanbanBoardModel kanbanboard = new KanbanBoardModel();
+        KanbanListModel result = kanbanboard.GetListByID(ListId);
+        
         return Response.status(Response.Status.OK).entity(result).build();
     }
 
