@@ -10,11 +10,30 @@ body {
     background:#FFFF00;
 }
 
-.bildunterschrift {
-    width: 300px;
-}
 
 .kanbantitel {
     color: white;
     font-size: 30px;
+}
+
+
+
+.addItem {
+    cursor: pointer;
+}
+
+
+
+
+.addList {
+    cursor: pointer;
+    width: 10%; 
+    position: fixed;
+    bottom: 2%;
+    right:2%;
+    -webkit-mask-image:-webkit-linear-gradient(top, rgba(5, 5, 5,1), rgba(5, 5, 5,1));
+}
+
+.addItem {
+    cursor: pointer;
 }
