@@ -114,10 +114,6 @@ function buildListEnd(listId)
     return listEnd;
 }
 
-function getErrorBox(Msg) {
-    return '<div class="alert alert-danger"><div class="panel-heading"><div class="text-center"><div class="row"><div class="col-sm-9"><h3 class="pull-left">Hoppla, da ist was schiefgelaufen:</h3></div><div class="col-sm-3"></div></div></div></div>\
-           <div class="panel-body">' + Msg + '</div></div>';
-
 function testFunc(){
     
     function showLists(lists){
@@ -261,5 +257,3 @@ function addList(listName)
     contentType: 'application/json'
     });
 }
-
-
