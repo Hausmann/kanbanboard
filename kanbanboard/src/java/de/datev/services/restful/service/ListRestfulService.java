@@ -12,8 +12,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.Consumes;
 
 import de.datev.model.KanbanListModel;
+import de.datev.model.KanbanListModelEmpty;
+
 
 /**
  * REST-Service für Kanban-Board
@@ -21,6 +24,7 @@ import de.datev.model.KanbanListModel;
 @Path("lists/")
 public class ListRestfulService {
 
+    private static KanbanBoardModel kanbanboard = new KanbanBoardModel();
     /**
      * gibt alle Listen zurück
      *
@@ -28,13 +32,18 @@ public class ListRestfulService {
      */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public Response getList() {
-        return Response.status(Response.Status.OK).build();
-
-        //return Response.status(Response.Status.OK).entity(result).build();
-        
+    public Response getLists() {
+        return Response.status(Response.Status.OK).entity(kanbanboard.getLists()).build(); 
     }
 
+    @POST
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response createNewList(String name){
+        kanbanboard.AddNewList(name);
+        
+        return Response.status(Response.Status.OK).entity(kanbanboard.getLists()).build();
+    }
     /**
      * Selektiert eine Liste
      *
@@ -45,7 +54,6 @@ public class ListRestfulService {
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Response getList(@PathParam("id") int ListId) {
-        KanbanBoardModel kanbanboard = new KanbanBoardModel();
         KanbanListModel result = kanbanboard.GetListByID(ListId);
         
         return Response.status(Response.Status.OK).entity(result).build();
