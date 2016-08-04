@@ -1,20 +1,39 @@
-rhost = "http://localhost:8080/testprojekt/kanbanboard/";
+rhost = "./api";
 function init() {
-    //$("#kanbanlists").append(build1HtmlKanbanList("Backlog", "generated List", "Task1", "Taskbeschreibung"));
-    //$("#kanbanlists").empty();
-    loadLists();
+    $("#kanbanlists").empty();
+    testFunc();
+    
 }
+
+function testFunc(){
+    
+    function showLists(lists){
+        for(var index in lists){
+            alert(lists[index].listName);
+            $("#kanbanlists").append(buildListHeader(lists[index].listName));
+            // add tasks
+            $("#kanbanlists").append(buildListEnd(lists[index].listId));
+        }
+    }
+    
+    
+    $.get(rhost + "/lists", function (data) {
+       showLists(data); 
+    });
+}
+
 
 function loadLists() {
     // get lists
     $.get(rhost + "/lists", function(data) {
+        alert(data);
         lists = JSON.parse(data);
         $("#kanbanlists").fadeOut(
             function() {
                 for (var list in lists){
                     $("#kanbanlists").append(buildListHeader(list.name));
                     $.get(rhost + "/tasks/" + list.id, function(data) {
-                        tasks = JSON.parse(data)
+                        tasks = JSON.parse(data);
                         for (var task in tasks) {
                             $("#kanbanlists").append(buildTask(task));
                         }
@@ -35,27 +54,30 @@ function loadLists() {
 
 function buildListHeader(name)
 {
-   listheader = ('<div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">\
+   listheader = ('<div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">\
                         <div class="row">\
                             <h4>' + name + '</h4>\
-                        </div>');
+                        </div>\
+                        <div class="row">\
+');
     return listheader;
 }
 
 function buildTask(task)
 {
-   task = ('<div>\
+   task = ('<div class="row">\
                 <p>' + task.name + '</p>\
                 <p>' + task.description + '</p>\
             </div>');
     return task;
 }
 
-function buildListEnd()
+function buildListEnd(listId)
 {
-   listEnd = (  '<div class="input-group">\
+   listEnd = (  '<div class="row input-group center-block">\
                     <input type="text" class="form-control" placeholder="Name">\
                     <input type="text" class="form-control" placeholder="Beschreibung">\
+                    <input type="hidden" name="listID" value="' + listId + '" />\
                     <button class="btn btn-default" type="button">+</button>\
                 </div>\
                 </div></div>');

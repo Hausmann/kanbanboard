@@ -7,7 +7,7 @@
         <link href="./css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="./css/starter-template.css" rel="stylesheet">
     </head>
-    <body>
+    <body onload="init()">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -30,13 +30,13 @@
         </nav>
         <div class="starter-template">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10 "><!-- For creating new lists -->
+                <div class="row" id="kanbanlists">
+                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10 "><!-- For creating new lists -->
                         <div class="row">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Name">
                                 <span class="input-group-btn">
-                                  <button class="btn btn-default" type="button">+</button>
+                                    <button class="btn btn-default" type="button">+</button>
                                 </span>
                             </div>
                         </div>
@@ -44,35 +44,31 @@
                             <div class="col-md-12 jumbotron"></div>
                         </div>                       
                     </div><!-- END For creating new lists -->
-                    <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
+                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
                         <div class="row">
                             <h4>ToDos</h4>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                <div>
-                                    <p>Task1</p>
-                                    <p>beschreibung</p>
-                                </div>
-                                <br/>
-                                <div>
-                                    <p>Task2</p>
-                                    <p>beschreibung</p>
-                                </div>
-                                <br/>
-                                <div>
-                                    <p>Task3</p>
-                                    <p>beschreibung</p>
-                                </div>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Name">
-                                    <input type="text" class="form-control" placeholder="Beschreibung">
-                                    <button class="btn btn-default" type="button">+</button>
-                                </div>
+                            <div class="row">
+                                <p>Task1</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
                             </div>
-                        </div>                        
+                            <div class="row">
+                                <p>Task2</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                            </div>
+                            <div class="row">
+                                <p>Task3</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                            </div>
+                            <div class="row input-group center-block">
+                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" class="form-control" placeholder="Beschreibung">
+                                <button class="btn btn-default" type="button">+</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
+                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
                         <div class="row"> 
                             <h4>Active</h4>
                         </div>
@@ -82,7 +78,7 @@
                             </div>
                         </div>                        
                     </div>
-                    <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
+                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
                         <div class="row"> 
                             <h4>Closed</h4>
                         </div>
@@ -92,7 +88,7 @@
                             </div>
                         </div>                        
                     </div>
-                    <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
+                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
                         <div class="row"> 
                             <h4>Done</h4>
                         </div>
@@ -102,7 +98,7 @@
                             </div>
                         </div>                        
                     </div>
-                    <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
+                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
                         <div class="row"> 
                             <h4>new</h4>
                         </div>
@@ -116,8 +112,7 @@
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script>window.jQuery || document.write('&lt;script src="./js/jquery.min.js"&gt;&lt;\/script&gt;')</script>
+        <script>window.jQuery || document.write('&lt;script src="./js/jquery.min.js"&gt;&lt;\/script&gt;');</script>
         <script src="./js/bootstrap.min.js"></script>
-
-
+        <script src="js/kanban.js"></script>
     </body></html>
