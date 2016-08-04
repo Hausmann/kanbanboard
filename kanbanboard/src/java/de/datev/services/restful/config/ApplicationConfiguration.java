@@ -1,9 +1,5 @@
 package de.datev.services.restful.config;
 
-import de.datev.services.restful.service.ListService;
-import de.datev.services.restful.service.TaskService;
-import java.util.HashSet;
-import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 

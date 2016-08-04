@@ -1,6 +1,7 @@
 package de.datev.services.restful.service;
 
 import de.datev.model.Repository;
+import de.datev.model.Task;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -10,6 +11,7 @@ import de.datev.model.TaskListEmpty;
 import java.util.ArrayList;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+import javax.ws.rs.PathParam;
 
 @Path("/lists")
 public class ListService {
@@ -21,6 +23,24 @@ public class ListService {
         return new TaskListEmpty("testList");
     }
 
+//    @GET
+//    @Path("/{listId}")
+//    @Produces({MediaType.APPLICATION_JSON})
+//    public ArrayList<Task> getTasksByListId(@PathParam("listId") int listId){
+//        ArrayList<Task> tasks = Repository.getTasks();
+//        
+//        ArrayList<Task> taksFromThisList = new ArrayList();
+//        
+//        for(Task task:tasks){
+//            if(task.getListId()==listId){
+//                taksFromThisList.add(task);
+//            }
+//        }
+//        
+//        return taksFromThisList;        
+//    }
+    
+    
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public ArrayList<TaskList> getAllLists() {
