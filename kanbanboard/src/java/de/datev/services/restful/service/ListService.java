@@ -3,12 +3,8 @@ package de.datev.services.restful.service;
 import de.datev.model.Repository;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
-import de.datev.model.Task;
 import de.datev.model.TaskList;
 import de.datev.model.TaskListEmpty;
 import java.util.ArrayList;
@@ -21,6 +17,14 @@ import javax.ws.rs.POST;
  */
 @Path("/lists")
 public class ListService {
+
+    @GET
+    @Path("/test")
+    @Produces({MediaType.APPLICATION_JSON})
+    public TaskListEmpty test() {
+        return new TaskListEmpty("testList");
+    }
+
     
     
     
@@ -42,33 +46,32 @@ public class ListService {
                       
         return newList;        
     }
-    
-    
-    
-
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
-    public Response getList() {
-        
-        return Response.status(Response.Status.OK).build();
-
-        //return Response.status(Response.Status.OK).entity(result).build();
-        
-    }
-
-    /**
-     * Selektiert eine Liste
-     *
-     * @param ListId der zu selektierenden Liste
-     */
-    //Beispielabfrage: /kanbanboard/lists/0
-    @GET
-    @Path("{id}")
-    @Produces({MediaType.APPLICATION_JSON})
-    public Response getList(@PathParam("id") int ListId) {
-        Task result = new Task();
-        //return Response.status(Response.Status.OK).entity(result).build();
-        return Response.status(Response.Status.OK).build();
-    }
-
+//    
+//    
+//    
+//
+//    @GET
+//    @Produces({MediaType.APPLICATION_JSON})
+//    public Response getList() {
+//        
+//        return Response.status(Response.Status.OK).build();
+//
+//        //return Response.status(Response.Status.OK).entity(result).build();
+//        
+//    }
+//
+//    /**
+//     * Selektiert eine Liste
+//     *
+//     * @param ListId der zu selektierenden Liste
+//     */
+//    //Beispielabfrage: /kanbanboard/lists/0
+//    @GET
+//    @Path("{id}")
+//    @Produces({MediaType.APPLICATION_JSON})
+//    public Response getList(@PathParam("id") int ListId) {
+//        Task result = new Task();
+//        //return Response.status(Response.Status.OK).entity(result).build();
+//        return Response.status(Response.Status.OK).build();
+//    }
 }

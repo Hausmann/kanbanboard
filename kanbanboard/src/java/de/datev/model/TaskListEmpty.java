@@ -10,7 +10,12 @@ package de.datev.model;
  * @author TG00029
  */
 public class TaskListEmpty {
+    
     private String name;
+
+    public TaskListEmpty(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
