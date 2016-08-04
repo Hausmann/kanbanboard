@@ -25,18 +25,14 @@ function gotKanbanListItem(data){
 
 
     
-function AddItemDialog()
+function AddItemDialog(data)
 {
-    // Get the modal
+
     var modal = document.getElementById('myModal');
-
-    // Get the button that opens the modal
     var btn = document.getElementById("addItem");
-
-    // Get the <span> element that closes the modal
     var span = document.getElementById("closeItem");
+    var okButton = document.getElementById("acceptItem");
 
-    // When the user clicks on the button, open the modal
     btn.onclick = function () {
         modal.style.display = "block";
     }
@@ -52,9 +48,20 @@ function AddItemDialog()
             modal.style.display = "none";
         }
     }
+    
+    okButton.onclick = function (){
+        modal.style.display = "none";
+        var currentListId = data.getParent.getParent.getParent.Id;
+        var childs = data.getParent.children;
+        for (var i = 0; i<childs.count; i++){
+            if(childs[i].class == "ItemContainer"){
+                continue;
+            }
+        }
+    }
 }
 
-function AddListDialog(){
+function AddListDialog(data){
     // Get the modal
     var modal = document.getElementById('myModalList');
 
