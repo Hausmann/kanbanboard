@@ -11,27 +11,64 @@
         <script SRC="JavaScript/jquery.min.js"></script>
         <script src="JavaScript/bootstrap.min.js"></script>
         <script src="JavaScript/kanban.js" ></script>
-        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
         <script src="http://www.w3schools.com/lib/w3data.js"></script>
         
     </head>
     <body>
-        
-        <div class="container-fluid"> 
-            <div class="row" id="row1">
-                         
-            </div>
-        </div>
-        
+
+        <div w3-include-html="navbar.html"></div>
+        <div w3-include-html="Liste.html"></div>
+
+        <script>
+            $(document).ready(w3IncludeHTML());
+        </script>
+
         <script>
             $(document).ready(function init();)
         </script>
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" style="width: 700px; height: 450px;">
+                <span id="closeItem" class="close">x</span>
+                <p>Geben Sie die Beschreibung ein:</p>
+                <textarea id="beschreibung" style="min-width: 600px; max-height: 300px; max-width: 600px" rows="10"></textarea>
+
+                <p>Assigned To:</p>
+                <textarea id="assignedTo" style="min-width: 600px; max-height: 100px; max-width: 600px" rows="3"></textarea>
+
+                <br><br>
+
+                <button style="width: 100px; right: 50%; position: fixed">
+                    Ok
+                </button>
+            </div>
+        </div>
         
-        <div w3-include-html="navbar.html"></div>
-        <div w3-include-html="Liste.html"></div>
+        <div id="myModalList" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" style="width: 550px; height: 200px;">
+                <span id="closeList" class="close">x</span>
+                <p>Namen der Liste:</p>
+                <textarea id="beschreibung" style="min-width: 500px; max-height: 80px; max-width: 500px" rows="10"></textarea>
+
+                <br><br>
+
+                <button id="acceptItem" onclick="AddItem()" style="width: 100px; right: 50%; position: fixed">
+                    Ok
+                </button>
+            </div>
+        </div>
         
-        <script>
-            w3IncludeHTML();
-        </script>
+        <img id="addList" class="addList" src="img/add_circle.svg" onclick="AddListDialog()">
+        
     </body>
 </html>
