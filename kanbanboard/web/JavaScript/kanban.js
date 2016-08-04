@@ -16,14 +16,7 @@ $.get(host + "kanbanboard/lists/0", gotKanbanListItem());}
 
 
 function gotKanbanListItem(data){
-    
 }
-
-
-
-
-
-
     
 function AddItemDialog()
 {
@@ -32,9 +25,16 @@ function AddItemDialog()
 
     // Get the button that opens the modal
     var btn = document.getElementById("addItem");
-
+        
     // Get the <span> element that closes the modal
     var span = document.getElementById("closeItem");
+    
+    var btnOk = document.getElementById("acceptItem");
+    
+    btnOk.onclick = function() {
+        //Hier: Neue Liste einfügen
+        modal.style.display = "none";
+    }
 
     // When the user clicks on the button, open the modal
     btn.onclick = function () {
@@ -64,6 +64,14 @@ function AddListDialog(){
     // Get the <span> element that closes the modal
     var span = document.getElementById("closeList");
 
+    //Ok-Button
+    var btnOk = document.getElementById("acceptList");
+    
+    btnOk.onclick = function() {
+        //Hier: Neue Liste einfügen
+        modal.style.display = "none";
+    }
+    
     // When the user clicks on the button, open the modal
     btn.onclick = function () {
         modal.style.display = "block";
