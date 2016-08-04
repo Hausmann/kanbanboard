@@ -22,6 +22,11 @@
     </head>
     <body>
         
+                
+        <script>
+            $(document).ready(function init();)
+        </script>
+        
         <div w3-include-html="navbar.html"></div>
         <div w3-include-html="Liste.html"></div>
         
@@ -33,11 +38,24 @@
             $(document).ready(function init();)
         </script>
 
-        
-        <div class="container-fluid"> 
-            <div class="row" id="row1">
-                         
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" style="width: 700px;">
+                <span class="close">x</span>
+                <p>Geben Sie die Beschreibung ein:</p>
+                <textarea id="beschreibung" style="width: 600px; max-height: 300px; max-width: 600px" rows="10"></textarea>
+                
+                <p>Assigned To:</p>
+                <textarea id="assignedTo" style="width: 600px; max-height: 100px; max-width: 600px" rows="3"></textarea>
+                
+                <br><br>
+                
+                <button style="width: 100px; right: 50%; position: fixed">
+                    Ok
+                </button>
             </div>
+
         </div>
         
         <script>
