@@ -58,30 +58,50 @@ function loadTasks(listId) {
 
 function buildTask(task)
 {
-   var htmlTask = ('<div class="col-md-12 panel panel-default">\
-                <h4>' + task.name + '</h4>\
-                <p>' + task.description + '</p>\
-            </div>');
+   var htmlTask = ('<div class="row">\
+                        <div class="col-md-12">\
+                            <div class="panel panel-default">\
+                                <div class="panel-heading" style="background-color: white;">'+
+                                    task.name +
+                                '</div>\
+                                <div class="panel-body">'+
+                                    task.description +
+                                '</div>\
+                            </div>\
+                        </div>\
+                    </div>');                
     return htmlTask;
 }
 
 function buildListEnd(listId)
 {
-   listEnd = (  '<div class="row input-group center-block">\
-                    <input name="TaskName'+ listId +'" type="text" class="form-control" placeholder="Name">\
-                    <input name="TaskDescription'+ listId +'" type="text" class="form-control" placeholder="Beschreibung">\
-                    <input type="hidden" name="listID" value="' + listId + '" />\
-                    <input class="btn btn-default" type="button" onClick="addTask('+listId+')" value="+" />\
-                </div>\
+    listEnd = ('<div>\
+                    <form role="form"> \
+                        <div class="form-group">\
+                                <label>Titel</label>\
+                                <input name="TaskName' + listId + '" type="text" class="form-control" placeholder="Name">\
+                        </div>\
+                        <div class="form-group">\
+                                <label>Beschreibung</label>\
+                                <input name="TaskDescription' + listId + '" type="text" class="form-control" placeholder="Beschreibung">\
+                        </div>\
+                                <input type="hidden" name="listID" value="' + listId + '" />\
+                                <input class="btn btn-default" type="button" onClick="addTask(' + listId + ')" value="Hinzufügen" />\
+                        </div>\
+                    </form>\
+                    <hr>\
                 </div>'); // close list
     return listEnd;
 }
 
 function buildListHeader(name, listId)
 {
-   listheader = ('<div id="' + listId + '" class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10 jumbotron">\
+   listheader = ('<div id="' + listId + '" class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-10" style="background-color: CFD1DB">\
                         <div class="row">\
-                            <h4>' + name + '</h4>\
+                        <div class="col-md-12">\
+                            <h3>' + name + '</h3>\
+                            <hr>\
+                        </div>\
                         </div>');
     return listheader;
 }
