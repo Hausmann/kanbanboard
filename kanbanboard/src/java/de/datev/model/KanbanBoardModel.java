@@ -32,6 +32,14 @@ public class KanbanBoardModel {
     public Button getAddListButton() {
         return addListButton;
     }
+
+    public void setLists(ArrayList<KanbanListModel> lists) {
+        this.lists = lists;
+    }
+
+    public ArrayList<KanbanListModel> getLists() {
+        return lists;
+    }
     
     public KanbanBoardModel() {
         this.lists = new ArrayList<KanbanListModel>();
@@ -52,5 +60,11 @@ public class KanbanBoardModel {
     public KanbanListModel GetListByID(int id)
     {
         return lists.get(id);
+    }
+    
+    public void AddNewList(String name)
+    {
+        KanbanListModel newList = new KanbanListModel(name);
+        this.lists.add(newList);
     }
 }
