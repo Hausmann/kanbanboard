@@ -72,14 +72,12 @@ function loadLists() {
     //$.get(rhost + "/tasks/", function(data) {});
 }
 
-function buildListHeader(name)
+function buildListHeader(name, listId)
 {
-   listheader = ('<div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">\
+   listheader = ('<div id="' + listId + '" class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">\
                         <div class="row">\
                             <h4>' + name + '</h4>\
-                        </div>\
-                        <div class="row">\
-');
+                        </div>');
     return listheader;
 }
 
@@ -100,7 +98,7 @@ function buildListEnd(listId)
                     <input type="hidden" name="listID" value="' + listId + '" />\
                     <button class="btn btn-default" type="button">+</button>\
                 </div>\
-                </div></div>');
+                </div>'); // close list
     return listEnd;
 }
 
