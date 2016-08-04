@@ -33,7 +33,7 @@ public class Repository {
         try {
             out = new FileOutputStream(path);
             JsonWriter writer = Json.createWriter(out); 
-            writer.write(tasks);
+            //writer.write(tasks);
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Repository.class.getName()).log(Level.SEVERE, null, ex);
