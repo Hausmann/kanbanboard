@@ -34,8 +34,9 @@
                     <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10 "><!-- For creating new lists -->
                         <div class="row">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input name="tb1" type="text" class="form-control" placeholder="Name">
                                 <span class="input-group-btn">
+                                    <input type="button" onClick="addList(tb1.text)" />
                                     <button class="btn btn-default" type="button">+</button>
                                 </span>
                             </div>
@@ -44,70 +45,7 @@
                             <div class="col-md-12 jumbotron"></div>
                         </div>                       
                     </div><!-- END For creating new lists -->
-                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
-                        <div class="row">
-                            <h4>ToDos</h4>
-                        </div>
-                        <div class="row">
-                            <div class="row">
-                                <p>Task1</p>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                            </div>
-                            <div class="row">
-                                <p>Task2</p>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                            </div>
-                            <div class="row">
-                                <p>Task3</p>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                            </div>
-                            <div class="row input-group center-block">
-                                <input type="text" class="form-control" placeholder="Name">
-                                <input type="text" class="form-control" placeholder="Beschreibung">
-                                <button class="btn btn-default" type="button">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
-                        <div class="row"> 
-                            <h4>Active</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 jumbotron">
-                                <p>Katze kaufen</p>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
-                        <div class="row"> 
-                            <h4>Closed</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 jumbotron">
-                                <p>Hund kaufen</p>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
-                        <div class="row"> 
-                            <h4>Done</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 jumbotron">
-                                <p>Hund kaufen</p>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-10">                     
-                        <div class="row"> 
-                            <h4>new</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 jumbotron">
-                                <p>Item</p>
-                            </div>
-                        </div>                        
-                    </div>
+                    
                 </div>
             </div>
         </div>

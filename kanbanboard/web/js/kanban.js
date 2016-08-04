@@ -93,10 +93,10 @@ function buildTask(task)
 function buildListEnd(listId)
 {
    listEnd = (  '<div class="row input-group center-block">\
-                    <input type="text" class="form-control" placeholder="Name">\
-                    <input type="text" class="form-control" placeholder="Beschreibung">\
+                    <input name="TaskName'+ listId +'" type="text" class="form-control" placeholder="Name">\
+                    <input name="TaskDescription'+ listId +'" type="text" class="form-control" placeholder="Beschreibung">\
                     <input type="hidden" name="listID" value="' + listId + '" />\
-                    <button class="btn btn-default" type="button">+</button>\
+                    <input class="btn btn-default" type="button" onClick="addTask('+listId+')" value="+" />\
                 </div>\
                 </div>'); // close list
     return listEnd;
@@ -106,6 +106,47 @@ function getErrorBox(Msg) {
     return '<div class="alert alert-danger"><div class="panel-heading"><div class="text-center"><div class="row"><div class="col-sm-9"><h3 class="pull-left">Hoppla, da ist was schiefgelaufen:</h3></div><div class="col-sm-3"></div></div></div></div>\
            <div class="panel-body">' + Msg + '</div></div>';
 
+}
+
+function addTask(listId)
+{
+    var a = document.getElementsByName("TaskName"+listId)[0].value;
+    var b = document.getElementsByName("TaskDescription"+listId)[0].value;
+    
+    var request = JSON.stringify({
+        name:a,
+        description:b,
+        listId:listId
+    });
+    
+
+    $.ajax ({
+    url: rhost+"/tasks",
+    type: "POST",
+    data: request,
+    success: function(){
+        //
+    },
+    contentType: 'application/json'
+    });
+}
+
+function addList(listName)
+{
+    var request = JSON.stringify({
+        name:listName
+    });
+    
+
+    $.ajax ({
+    url: rhost+"/lists",
+    type: "POST",
+    data: request,
+    success: function(){
+        //
+    },
+    contentType: 'application/json'
+    });
 }
 
 
