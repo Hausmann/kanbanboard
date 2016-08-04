@@ -76,13 +76,12 @@ function buildTask(task)
 function buildListEnd(listId)
 {
     listEnd = ('<div>\
-                    <form role="form"> \
+    <label>Task hinzufügen</label>\
+                    <form role="form">\
                         <div class="form-group">\
-                                <label>Titel</label>\
                                 <input name="TaskName' + listId + '" type="text" class="form-control" placeholder="Name">\
                         </div>\
                         <div class="form-group">\
-                                <label>Beschreibung</label>\
                                 <input name="TaskDescription' + listId + '" type="text" class="form-control" placeholder="Beschreibung">\
                         </div>\
                                 <input type="hidden" name="listID" value="' + listId + '" />\
@@ -130,8 +129,8 @@ function addTask(listId)
     url: rhost+"/tasks",
     type: "POST",
     data: request,
-    success: function(){
-        //
+    success: function(data){
+        $("#"+listId).append(buildTask(data));
     },
     contentType: 'application/json'
     });
