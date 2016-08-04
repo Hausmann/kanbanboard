@@ -94,6 +94,14 @@ function buildListEnd(listId)
     return listEnd;
 }
 
+function appendNewList(listName, listId)
+{
+    var htmlStr = (buildListHeader(listName));
+    htmlStr += createHtmlTasks(listId);
+    htmlStr += buildListEnd(listId);
+    $("#kanbanlists").append(htmlStr);
+}
+
 function buildListHeader(name, listId)
 {
    listheader = ('<div id="' + listId + '" class="col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-10" style="background-color: CFD1DB">\
@@ -129,6 +137,7 @@ function addTask(listId)
     });
 }
 
+
 function addList(listName)
 {
     var request = JSON.stringify({
@@ -140,11 +149,119 @@ function addList(listName)
     url: rhost+"/lists",
     type: "POST",
     data: request,
-    success: function(){
-        //
+    success: function(data){
+            appendNewList(data.listName, data.listId);
     },
     contentType: 'application/json'
-    });
+    });   
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
