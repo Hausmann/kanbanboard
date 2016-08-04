@@ -25,7 +25,7 @@ function gotKanbanListItem(data){
 
 
     
-function AddItem()
+function AddItemDialog()
 {
     // Get the modal
     var modal = document.getElementById('myModal');
@@ -52,9 +52,11 @@ function AddItem()
             modal.style.display = "none";
         }
     }
+    // Ausgabe von Hallo Name mit Prompt- und Alert-Box
+    //var sName = prompt("Bitte Beschreibung eingeben:");
 }
 
-function AddList(){
+function AddListDialog(){
     // Get the modal
     var modal = document.getElementById('myModalList');
 
