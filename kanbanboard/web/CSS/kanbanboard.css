@@ -13,3 +13,8 @@ body {
 .bildunterschrift {
     width: 300px;
 }
+
+.kanbantitel {
+    color: white;
+    font-size: 30px;
+}
