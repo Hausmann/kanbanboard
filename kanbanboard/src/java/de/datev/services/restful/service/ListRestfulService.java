@@ -15,8 +15,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.Consumes;
 
 import de.datev.model.KanbanListModel;
-import de.datev.model.KanbanListModelEmpty;
-
 
 /**
  * REST-Service für Kanban-Board
