@@ -11,26 +11,22 @@
         <script SRC="JavaScript/jquery.min.js"></script>
         <script src="JavaScript/bootstrap.min.js"></script>
         <script src="JavaScript/kanban.js" ></script>
+        
+        <script src="http://www.w3schools.com/lib/w3data.js"></script>
+        
     </head>
     <body>
+        
+        <div w3-include-html="navbar.html"></div>
+        
+        <script>
+            w3IncludeHTML();
+        </script>
+        
+        
         <script>
             $(document).ready(function init();)
         </script>
-
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span Class="icon-bar"></span>
-                    </button >
-                    <div class="kanbantitel">
-                        Kanban Board
-                    </div>
-                </div>
-            </div>
-        </nav>
 
         <div class="container-fluid"> 
             <div class="row" id="row1">
@@ -60,7 +56,5 @@
                
             </div>
         </div>
-
-
     </body>
 </html>
