@@ -8,7 +8,6 @@ function init() {
 function testFunc(){    
     function showLists(lists){
         for(var index in lists){
-            //alert(lists[index].listName);
             var htmlStr = (buildListHeader(lists[index].listName));           
             
             htmlStr += buildListEnd(lists[index].listId);
@@ -58,7 +57,6 @@ function loadTasks(listId) {
 function loadLists() {
     // get lists
     $.get(rhost + "/lists", function(data) {
-        alert(data);
         lists = JSON.parse(data);
         $("#kanbanlists").fadeOut(
             function() {
@@ -118,15 +116,7 @@ function testFunc(){
     
     function showLists(lists){
         for(var index in lists){
-            alert(lists[index].listName);
-             var htmlStr = (buildListHeader(lists[index].listName));
-            
-            htmlStr += createHtmlTasks(lists[index].listId);
-            
-            // add tasks
-            htmlStr += buildListEnd(lists[index].listId);
-            
-            $("#kanbanlists").append(htmlStr);
+            appendNewList(lists[index].listName, lists[index].listId);
         }
     }
     
@@ -134,6 +124,14 @@ function testFunc(){
     $.get(rhost + "/lists", function (data) {
        showLists(data); 
     });
+}
+
+function appendNewList(listName, listId)
+{
+    var htmlStr = (buildListHeader(listName));
+    htmlStr += createHtmlTasks(listId);
+    htmlStr += buildListEnd(listId);
+    $("#kanbanlists").append(htmlStr);
 }
 
  function loadTasks(listId){
@@ -155,7 +153,6 @@ function testFunc(){
 function loadLists() {
     // get lists
     $.get(rhost + "/lists", function(data) {
-        alert(data);
         lists = JSON.parse(data);
         $("#kanbanlists").fadeOut(
             function() {
@@ -251,9 +248,11 @@ function addList(listName)
     url: rhost+"/lists",
     type: "POST",
     data: request,
-    success: function(){
-        //
+    success: function(data){
+            appendNewList(data.listName, data.listId);
     },
     contentType: 'application/json'
     });
+    
+    
 }
