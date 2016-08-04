@@ -10,9 +10,14 @@ function testFunc(){
     function showLists(lists){
         for(var index in lists){
             alert(lists[index].listName);
-            $("#kanbanlists").append(buildListHeader(lists[index].listName));
+             var htmlStr = (buildListHeader(lists[index].listName));
+            
+            htmlStr += createHtmlTasks(lists[index].listId);
+            
             // add tasks
-            $("#kanbanlists").append(buildListEnd(lists[index].listId));
+            htmlStr += buildListEnd(lists[index].listId);
+            
+            $("#kanbanlists").append(htmlStr);
         }
     }
     
@@ -21,6 +26,21 @@ function testFunc(){
        showLists(data); 
     });
 }
+
+ function loadTasks(listId){
+     
+     $.get(rhost + "/lists/" + listId, function(data){
+        return createHtmlTasks(data); 
+     });
+ }
+ 
+ function createHtmlTasks(tasks){
+     var html = "";
+     for(var index in tasks){
+         html+= buildTask(tasks[index]);
+     }
+     return html;
+ }
 
 
 function loadLists() {
@@ -65,11 +85,11 @@ function buildListHeader(name)
 
 function buildTask(task)
 {
-   task = ('<div class="row">\
+   var htmlTask = ('<div class="row">\
                 <p>' + task.name + '</p>\
                 <p>' + task.description + '</p>\
             </div>');
-    return task;
+    return htmlTask;
 }
 
 function buildListEnd(listId)

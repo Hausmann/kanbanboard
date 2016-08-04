@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 
-/**
- * REST-Service für Kanban-Board
- */
 @Path("/lists")
 public class ListService {
 
@@ -45,32 +42,4 @@ public class ListService {
 
         return newList;
     }
-//    
-//    
-//    
-//
-//    @GET
-//    @Produces({MediaType.APPLICATION_JSON})
-//    public Response getList() {
-//        
-//        return Response.status(Response.Status.OK).build();
-//
-//        //return Response.status(Response.Status.OK).entity(result).build();
-//        
-//    }
-//
-//    /**
-//     * Selektiert eine Liste
-//     *
-//     * @param ListId der zu selektierenden Liste
-//     */
-//    //Beispielabfrage: /kanbanboard/lists/0
-//    @GET
-//    @Path("{id}")
-//    @Produces({MediaType.APPLICATION_JSON})
-//    public Response getList(@PathParam("id") int ListId) {
-//        Task result = new Task();
-//        //return Response.status(Response.Status.OK).entity(result).build();
-//        return Response.status(Response.Status.OK).build();
-//    }
 }
